@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onLoad="preLoad()">
+    <form autocomplete="off" id="container">
+        <h1>What is your favorite animal?</h1>
+      <div>
+      <input type="radio" name="1" onClick="im('a1');" id="dog" >
+      <label for="dog">Dog</label>
+    </div>
+    <br>
+    <div>
+      <input type="radio" name="1" onClick="im('a2');" id="cat">
+      <label for="dog">Cat</label>
+    </div>
+    <br>
+    <div>
+      <input type="radio" name="1" onClick="im('a3');" id="titan">
+      <label for="dog">Imperial Knight</label>
+    </div>
+    <h2>Do you want to sign up for cat facts?</h2>
+    <fieldset id="set">
+      <input type="radio" name="choice"  id="yes" >
+      <label for="dog">Yes</label>
+   
+      <input type="radio" name="choice" id="no" >
+      <label for="dog">No</label>
+    </fieldset>
+    <button id="love" disabled>I love cats</button>
+    <button id="sign" disabled >Sign up</button>
+    </form>
+    <img id="a" src="assets/mix.jpg">
+  </body>
+  <script src="app.js"></script>
+    
+  </script>
+</html>
