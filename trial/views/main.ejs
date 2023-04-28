@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body onload=" getData(), TableData()">
+    <div class="container">
+      <% if (data.length === 0) { %>
+      <p>There are no posts!</p>
+      <% } else { %> <% for (var i = 0; i < data.length; i++) { %>
+      <div>
+        Your url for: <%= data[i].alias %> is:
+        <a href="<%= data[i].url %>" id="locationlink"> <%= data[i].url %> </a>
+        and it was created on: <%= new
+        Date(data[i].timestamp).toLocaleTimeString() %> and hit count is : <%=
+        data[i].hitcount %>. <% }} %>
+      </div>
+
+      <hr />
+
+      <p id="sentData"></p>
+
+      <hr />
+
+      <form action="/api/links" method="POST">
+        <legend for="url">URL</legend>
+        <input type="text" id="URL" name="URL" required />
+        <br />
+        <legend for="Alias">ALIAS</legend>
+        <input type="text" id="Alias" name="Alias" required />
+        <br />
+        <button id="submitButt" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <hr />
+
+    <form>
+      <legend for="secretcode">Secretcode</legend>
+      <input type="text" id="secretcode" name="secretcode" required />
+
+      <button id="submitDelete" type="submit">Submit</button>
+
+      <p id="errorCodeMessage">error</p>
+    </form>
+
+    <hr />
+
+    <form>
+      <legend for="alias">alias</legend>
+      <input type="text" id="alias" name="alias" required />
+
+      <button id="submitUpdate" type="submit">Submit</button>
+
+      <p id="errorAliasMessage">error</p>
+    </form>
+
+    <hr />
+
+    <table id="table">
+      <thead id="thead">
+        <th>Index</th>
+        <th>Url</th>
+        <th>Alias</th>
+        <th>Hitcount</th>
+        <th>Secretcode</th>
+        <th>Actions</th>
+      </thead>
+
+      <tbody id="tableContent"></tbody>
+      <template id="data-template">
+        <tr id="rowTable">
+          <td>{{ index }}</td>
+          <td contenteditable="true" data-field="url">{{ url }}</td>
+          <td contenteditable="true" data-field="alias">{{ alias }}</td>
+          <td>{{ hitcount }}</td>
+          <td>{{ secretcode }}</td>
+        </tr>
+      </template>
+    </table>
+
+    <hr />
+    <button id="newDataOne">new titan</button>
+    <button id="newDataTwo">new ship</button>
+    <hr />
+    <button id="deleteAll">delete All</button>
+    <hr />
+    <button id="addNewData">add new data</button>
+
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Publisher</th>
+        <th>Price</th>
+      </thead>
+      <tbody>
+        <% data2.forEach(item => { %>
+        <tr>
+          <td><%= item.id %></td>
+          <td><%= item.title %></td>
+          <td><%= item.author %></td>
+          <td><%= item.category %></td>
+          <td><%= item.publisher %></td>
+          <td><%= item.price %></td>
+          <% }) %>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="../static/script.js" async defer></script>
+  </body>
+</html>

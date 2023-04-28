@@ -1,0 +1,9 @@
+{"category":"Technology","publisher":"Jex Max Publication","price":105}
+{"category":"Computers","publisher":"BPP Publication","price":200}
+{"category":"Technology","publisher":"Ultra Press Inc.","price":250}
+{"category":"Science","publisher":"Summer Night Publication","price":145}
+{"category":"Science","publisher":"Mountain Publication","price":112}{"category":"Science","publisher":"New Harrold Publication","price":85}
+{"category":"Science","publisher":"Summer Night Publication","price":145}
+{"category":"Science","publisher":"Mountain Publication","price":112}{"category":"Science","publisher":"New Harrold Publication","price":85}
+{"category":"Science","publisher":"Summer Night Publication","price":145}
+{"category":"Science","publisher":"Mountain Publication","price":112}

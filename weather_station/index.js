@@ -8,6 +8,7 @@ app.use("/assets", express.static("assets"));
 express.static("static");
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const path = require("path");
 app.use("/static", express.static(path.join(__dirname, "static")));
